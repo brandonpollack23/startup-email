@@ -1,0 +1,10 @@
+[Unit]
+Description=Send a notification email to the %i
+After=postfix.service
+
+[Service]
+Type=oneshot
+ExecStart=/bin/bash /root/scripts/email-on-reboot.sh %i
+
+[Install]
+WantedBy=multi-user.target
