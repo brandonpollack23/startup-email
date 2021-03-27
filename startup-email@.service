@@ -1,5 +1,5 @@
 [Unit]
-Description=Send a notification email to the %i
+Description=Send a notification email to %i on system boot
 After=postfix.service
 
 [Service]
