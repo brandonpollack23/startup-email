@@ -1,0 +1,10 @@
+[Unit]
+Description=Send a notification email to %i on wake up from suspend
+After=suspend.target hibernate.target hybrid-sleep.target suspend-then-hibernate.target
+
+[Service]
+Type=oneshot
+ExecStart=/bin/bash /root/scripts/email-on-wake.sh %i
+
+[Install]
+WantedBy=suspend.target hibernate.target hybrid-sleep.target suspend-then-hibernate.target
